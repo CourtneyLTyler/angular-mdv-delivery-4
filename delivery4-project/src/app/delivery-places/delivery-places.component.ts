@@ -7,6 +7,7 @@ import { deliveryPlacesArray } from "../delivery-places-data";
   styleUrls: ["./delivery-places.component.scss"]
 })
 export class DeliveryPlacesComponent implements OnInit {
+  deliveryPlaces = deliveryPlacesArray;
   constructor() {}
 
   ngOnInit() {}
