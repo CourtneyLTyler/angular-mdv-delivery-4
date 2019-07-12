@@ -1,4 +1,18 @@
 <h1>Delivery Places Arlington</h1>
-<div *ngFor="let place of deliveryPlaces">
-  <h2>{{ place.name }}</h2>
-</div>
+
+<mat-action-list>
+  <button
+    mat-list-item
+    *ngFor="let place of deliveryPlaces"
+    (click)="onSelect(place)"
+    [class.selected]="place === selectedPlace"
+  >
+    <h2>{{ place.name }}</h2>
+  </button>
+  <div *ngIf="selectedPlace && showDetails === true">
+    <h2>{{ selectedPlace.name }}</h2>
+    <h3>{{ selectedPlace.type }}</h3>
+    <h3>{{ selectedPlace.website }}</h3>
+  </div>
+</mat-action-list>
+<button (click)="showDetails = false">Hide Details</button>

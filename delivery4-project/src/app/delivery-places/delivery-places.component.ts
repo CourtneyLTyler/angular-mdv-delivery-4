@@ -8,7 +8,14 @@ import { deliveryPlacesArray } from "../delivery-places-data";
 })
 export class DeliveryPlacesComponent implements OnInit {
   deliveryPlaces = deliveryPlacesArray;
+  selectedPlace: any;
+  showDetails = false;
   constructor() {}
 
   ngOnInit() {}
+
+  onSelect(place) {
+    this.selectedPlace = place;
+    this.showDetails = true;
+  }
 }
